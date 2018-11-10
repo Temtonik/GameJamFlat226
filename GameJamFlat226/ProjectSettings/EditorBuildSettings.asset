@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Intro_Scene.unity
+    guid: 160e6955b48584d4a81dc5b59d0c75d3
+  - enabled: 1
     path: Assets/Scenes/Test_blur_plateform.unity
     guid: a782e886443ec1b428d77fa60b8c3fba
   - enabled: 1
