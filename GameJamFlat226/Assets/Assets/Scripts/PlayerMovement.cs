@@ -11,22 +11,39 @@ public class PlayerMovement : MonoBehaviour {
 
 	float horizontalMove = 0f;
 	bool jump = false;
-	//bool crouch = false;
 
-	// Update is called once per frame
-	void Update () {
+    public static bool IsInputEnabled = true;
+    public float secondToWait;
 
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+    //bool crouch = false;
 
-		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+    // Update is called once per frame
+    void Update () {
 
-		if (Input.GetButtonDown("Jump"))
-		{
-			jump = true;
-			animator.SetBool("IsJumping", true);
-		}
+        if (IsInputEnabled)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		/*if (Input.GetButtonDown("Crouch"))
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        }
+
+        if (IsInputEnabled)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping", true);
+            }
+        }
+
+        if (Input.GetKeyDown("e") && IsInputEnabled == true)
+        {
+            IsInputEnabled = false; //disable all inputs
+            StartCoroutine(DisableControl());
+        }
+
+
+        /*if (Input.GetButtonDown("Crouch"))
 		{
 			crouch = true;
 		} else if (Input.GetButtonUp("Crouch"))
@@ -34,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 			crouch = false;
 		}*/
 
-	}
+    }
 
 	public void OnLanding ()
 	{
@@ -52,4 +69,10 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
 	}
+
+    IEnumerator DisableControl()
+    {
+        yield return new WaitForSeconds(secondToWait);
+        IsInputEnabled = true;
+    }
 }
