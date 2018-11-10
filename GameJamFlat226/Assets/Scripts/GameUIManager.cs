@@ -56,6 +56,7 @@ public class GameUIManager : MonoBehaviour {
         if (pauseMenu.activeSelf)
         {
             pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
             if (hideMouseCursor)
             {
                 Cursor.visible = false;
@@ -65,6 +66,7 @@ public class GameUIManager : MonoBehaviour {
         else if (!pauseMenu.activeSelf)
         {
             pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
             if (showMouseCursorWhenPaused)
             {
                 Cursor.visible = true;
@@ -76,11 +78,13 @@ public class GameUIManager : MonoBehaviour {
     public void OnClickResume ()
     {
         TogglePauseMenu();
+        Time.timeScale = 1f;
     }
 
     //Penser à mettre la scène du Main Menu en première position (index 0) dans les Build Settings
     public void OnClickMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 }

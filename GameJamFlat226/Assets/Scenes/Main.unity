@@ -391,6 +391,22 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 84.382065
       objectReference: {fileID: 0}
+    - target: {fileID: 114403695979270760, guid: 1abbb9cfd3a5e0847b3bc940a398d486,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Programming : Tom Rivaud
+
+
+        Art : Maxime Veyriat
+
+
+        Design : Stanislas Vaslin'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114879749462816774, guid: 1abbb9cfd3a5e0847b3bc940a398d486,
+        type: 2}
+      propertyPath: sceneToLoadOnClickPlay
+      value: Test_blur_plateform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1abbb9cfd3a5e0847b3bc940a398d486, type: 2}
   m_IsPrefabAsset: 0
