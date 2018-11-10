@@ -36,6 +36,22 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
+        if (!IsInputEnabled)
+        {
+            horizontalMove = Input.GetAxisRaw("HorizontalInverse") * runSpeed;
+
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        }
+
+        if (!IsInputEnabled)
+        {
+            if (Input.GetButtonDown("JumpInverse"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping", true);
+            }
+        }
+
         if (Input.GetKeyDown("e") && IsInputEnabled == true)
         {
             IsInputEnabled = false; //disable all inputs
