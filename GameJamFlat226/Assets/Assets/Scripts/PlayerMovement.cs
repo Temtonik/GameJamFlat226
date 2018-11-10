@@ -12,22 +12,22 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalMove = 0f;
 	bool jump = false;
 
-    public static bool IsInputEnabled = true;
-    public float secondToWait;
+    public bool IsInputJumpEnabled = true;
+    public bool IsInputMoveEnabled = true;
 
     //bool crouch = false;
 
     // Update is called once per frame
     void Update () {
 
-        if (IsInputEnabled)
+        if (IsInputMoveEnabled)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
 
-        if (IsInputEnabled)
+        if (IsInputJumpEnabled)
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -36,14 +36,14 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        if (!IsInputEnabled)
+        if (!IsInputMoveEnabled)
         {
             horizontalMove = Input.GetAxisRaw("HorizontalInverse") * runSpeed;
 
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
 
-        if (!IsInputEnabled)
+        if (!IsInputJumpEnabled)
         {
             if (Input.GetButtonDown("JumpInverse"))
             {
@@ -51,13 +51,6 @@ public class PlayerMovement : MonoBehaviour {
                 animator.SetBool("IsJumping", true);
             }
         }
-
-        if (Input.GetKeyDown("e") && IsInputEnabled == true)
-        {
-            IsInputEnabled = false; //disable all inputs
-            StartCoroutine(DisableControl());
-        }
-
 
         /*if (Input.GetButtonDown("Crouch"))
 		{
@@ -85,10 +78,4 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
 	}
-
-    IEnumerator DisableControl()
-    {
-        yield return new WaitForSeconds(secondToWait);
-        IsInputEnabled = true;
-    }
 }
