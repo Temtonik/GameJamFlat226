@@ -1242,6 +1242,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1455408291734554, guid: 181ccc557440bf641afb6df246eaa99c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181ccc557440bf641afb6df246eaa99c, type: 2}
   m_IsPrefabAsset: 0
@@ -1514,12 +1518,12 @@ GameObject:
   - component: {fileID: 837914424}
   - component: {fileID: 837914423}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: JumpInvert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &837914422
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1535,7 +1539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8871175, y: 0.80187356}
   m_AnchorMax: {x: 0.98162436, y: 0.94373924}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837914423
@@ -1776,16 +1780,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 212455346072951434, guid: 1a33c2d0778d9a547b66a6119ed6c4b4,
+    - target: {fileID: 114079916576452178, guid: 1a33c2d0778d9a547b66a6119ed6c4b4,
         type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114261497426219780, guid: 1a33c2d0778d9a547b66a6119ed6c4b4,
+      propertyPath: jumpWarning
+      value: 
+      objectReference: {fileID: 837914421}
+    - target: {fileID: 114079916576452178, guid: 1a33c2d0778d9a547b66a6119ed6c4b4,
         type: 2}
-      propertyPath: m_JumpForce
-      value: 300
-      objectReference: {fileID: 0}
+      propertyPath: moveWarning
+      value: 
+      objectReference: {fileID: 1355652214}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a33c2d0778d9a547b66a6119ed6c4b4, type: 2}
   m_IsPrefabAsset: 0
@@ -2073,6 +2077,12 @@ RectTransform:
   m_AnchoredPosition: {x: 37.97, y: -4.83}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &952717402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114079916576452178, guid: 1a33c2d0778d9a547b66a6119ed6c4b4,
+    type: 2}
+  m_PrefabInternal: {fileID: 869089838}
+  m_Script: {fileID: 11500000, guid: e5273cd41ac3c5246965ef9469d10dd7, type: 3}
 --- !u!1 &1069366245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,8 +2387,9 @@ GameObject:
   - component: {fileID: 1311046178}
   - component: {fileID: 1311046177}
   - component: {fileID: 1311046176}
+  - component: {fileID: 1311046180}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: WarningCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2461,6 +2472,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1311046180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311046175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e6952c3e5a90347a6f7602e75e9b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_PlayerMovement: {fileID: 952717402}
+  jumpWarning: {fileID: 837914421}
+  moveWarning: {fileID: 1355652214}
 --- !u!1001 &1326725642
 Prefab:
   m_ObjectHideFlags: 0
@@ -2565,7 +2590,7 @@ GameObject:
   - component: {fileID: 1355652217}
   - component: {fileID: 1355652216}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MoveInvert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
