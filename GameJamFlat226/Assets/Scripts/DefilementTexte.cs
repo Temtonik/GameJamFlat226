@@ -20,6 +20,7 @@ public class DefilementTexte : MonoBehaviour
         // ZoneDeTexte.text = MonTexte.ToString();
         ZoneDeTexte.text = "";
         DisplayLetter();
+        StartCoroutine(SwitchScene());
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class DefilementTexte : MonoBehaviour
             DisplayFullPhrase();
         }
 
-        else if ((Input.anyKeyDown) && (_textIdx == MonTexte[_phraseIdx].Length))
+        else if ((Input.GetButtonDown("Submit") && (_textIdx == MonTexte[_phraseIdx].Length)))
         {
             NextPhrase();
         }
@@ -52,6 +53,12 @@ public class DefilementTexte : MonoBehaviour
         DisplayLetter();
     }
 
+    IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(5.7f);
+        SceneManager.LoadScene(NextLevel);
+    }
+
     void NextPhrase()
     {
         _phraseIdx++;
@@ -63,7 +70,7 @@ public class DefilementTexte : MonoBehaviour
         }
         else if (_phraseIdx > MonTexte.Length - 1)
         {
-            NextScene();
+            //NextScene();
         }
     }
 
@@ -72,10 +79,5 @@ public class DefilementTexte : MonoBehaviour
         StopCoroutine("TextWait");
         _textIdx = MonTexte[_phraseIdx].Length;
         ZoneDeTexte.text = MonTexte[_phraseIdx];
-    }
-
-    void NextScene()
-    {
-        SceneManager.LoadScene(NextLevel);
     }
 }
