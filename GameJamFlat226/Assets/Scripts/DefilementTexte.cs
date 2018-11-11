@@ -30,7 +30,7 @@ public class DefilementTexte : MonoBehaviour
             DisplayFullPhrase();
         }
 
-        else if (Input.GetButtonDown("Submit") && (_textIdx == MonTexte[_phraseIdx].Length))
+        else if ((Input.anyKeyDown) && (_textIdx == MonTexte[_phraseIdx].Length))
         {
             NextPhrase();
         }
