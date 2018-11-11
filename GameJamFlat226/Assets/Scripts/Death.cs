@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public Vector3 initialPosPlayer;
+    public Transform playerPos, respawnPos;
+
+    // Use this for initialization
+    void Start () {
+        initialPosPlayer = GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -19,7 +22,7 @@ public class Death : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            playerPos.transform.position = respawnPos.transform.position;
         }
     }
 }

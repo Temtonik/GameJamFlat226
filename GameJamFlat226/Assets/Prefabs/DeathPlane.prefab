@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9779b752bb175ed408e690457cd3e913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPosPlayer: {x: 0, y: 0, z: 0}
+  playerPos: {fileID: 0}
+  respawnPos: {fileID: 0}
 --- !u!212 &212338172460497924
 SpriteRenderer:
   m_ObjectHideFlags: 1
