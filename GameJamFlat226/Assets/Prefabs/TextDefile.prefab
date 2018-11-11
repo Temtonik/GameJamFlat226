@@ -97,13 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonTexte:
-  - The order of seasons has been subvert...
-  - '...but a legendary hero is here to restore this order,'
-  - BILLYBALL !!!
-  - For it, he'll have to find the four jewels of the seasons,
-  - after crossing each of them
+  - I'm too high...
   ZoneDeTexte: {fileID: 114423534725660076}
-  NextLevel: room_01_cinematic
+  NextLevel: Phase2
+  DelayTime: 5.5
 --- !u!114 &114423534725660076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,14 +162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4811321, g: 0.4788626, b: 0.4788626, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8d09940113d2c964ba0cf777261217ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -12,6 +12,7 @@ public class DefilementTexte : MonoBehaviour
     private int _phraseIdx = 0;
     private int _textIdx = 0;
     public string NextLevel;
+    public float DelayTime;
 
 
     // Use this for initialization
@@ -55,7 +56,7 @@ public class DefilementTexte : MonoBehaviour
 
     IEnumerator SwitchScene()
     {
-        yield return new WaitForSeconds(5.7f);
+        yield return new WaitForSeconds(DelayTime);
         SceneManager.LoadScene(NextLevel);
     }
 
