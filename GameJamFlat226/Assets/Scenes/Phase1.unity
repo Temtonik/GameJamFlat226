@@ -1538,6 +1538,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114001383591382250, guid: 181ccc557440bf641afb6df246eaa99c,
+        type: 2}
+      propertyPath: hideMouseCursor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001383591382250, guid: 181ccc557440bf641afb6df246eaa99c,
+        type: 2}
+      propertyPath: showMouseCursorWhenPaused
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181ccc557440bf641afb6df246eaa99c, type: 2}
   m_IsPrefabAsset: 0
