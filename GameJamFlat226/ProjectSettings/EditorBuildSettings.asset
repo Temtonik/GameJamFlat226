@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_final_stan.unity
     guid: 225f04bf332d8114a92823cd3900f5ed
+  - enabled: 1
+    path: Assets/Scenes/EpilepticWarning.unity
+    guid: f5aa070f14e397d4c87bedc224b67e50
   m_configObjects: {}
